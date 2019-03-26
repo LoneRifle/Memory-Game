@@ -3,8 +3,8 @@ import React, { Component } from 'react'
 class GameController extends Component {
   constructor (props) {
     super(props)
-    angular.module('memoryGameApp').controller('GameCtrl', function GameCtrl($scope, game) {
-      $scope.game = game
+    angular.module('memoryGameApp').controller('GameCtrl', function GameCtrl($scope) {
+      $scope.game = props.game
     })
   }
 
