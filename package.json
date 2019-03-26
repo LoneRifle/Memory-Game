@@ -28,6 +28,8 @@
     "webpack": "^3.8.1"
   },
   "dependencies": {
-    "angular": "^1.4.14"
+    "angular": "^1.4.14",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5"
   }
 }
