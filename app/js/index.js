@@ -1,9 +1,3 @@
-require('angular')
-
-angular.module('memoryGameApp', [])
-
-require('./directives/card')
-
 const Game = require('./game')
 
 function makeGame () {

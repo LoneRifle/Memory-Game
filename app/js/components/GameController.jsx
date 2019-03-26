@@ -1,42 +1,46 @@
 import React, { Component } from 'react'
+import MemoryCard from './MemoryCard.jsx'
 
 class GameController extends Component {
   constructor (props) {
     super(props)
-    angular.module('memoryGameApp').controller('GameCtrl', function GameCtrl($scope) {
-      $scope.game = props.game
-    })
+    this.state = {
+      game: props.game,
+    }
+    this.flip = this.flip.bind(this)
   }
 
-  componentDidMount () {
-    this.$rootScope = angular.injector(['ng', 'memoryGameApp']).get('$rootScope')
-    angular.bootstrap(this.container, ['memoryGameApp'])
-  }
-
-  componentWillUnmount () {
-    this.$rootScope.$destroy()
+  flip (tile) {
+    const game = this.state.game
+    game.flipTile(tile)
+    this.setState({ game })
   }
 
   render () {
     return (
-    <div
-      ng-controller="GameCtrl"
-      ref={c => this.container = c}
-      dangerouslySetInnerHTML={{__html: `
-        <div>Pairs left to match: {{game.unmatchedPairs}}</div>
-        <div>Matching: {{game.firstPick.title}}</div>
+      <div>
+        <div>Pairs left to match: {this.state.game.unmatchedPairs}</div>
+        <div>Matching: {(this.state.game.firstPick || {}).title}</div>
       
         <table>
-          <tr ng-repeat="row in game.grid">
-            <td ng-repeat="tile in row" class="container">
-              <memory-card tile="tile" game="game"></memory-card>
-            </td>
-          </tr>
+          <tbody>
+          {
+            this.state.game.grid.map((row, rowIndex) => (
+              <tr key={rowIndex}>
+                {
+                  row.map((tile, colIndex) => (
+                    <td key={`${rowIndex}-${colIndex}`} className="container">
+                      <MemoryCard tile={tile} flip={this.flip}></MemoryCard>
+                    </td>
+                  ))
+                }
+              </tr>
+            ))
+          }
+          </tbody>
         </table>
-      
-        <div class="message">{{game.message}}</div>
-      `}}
-      />
+        <div className="message">{this.state.game.message}</div>
+      </div>
     )
   }
 }
