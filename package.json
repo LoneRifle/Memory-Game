@@ -1,0 +1,29 @@
+{
+  "name": "react-mounting-angularjs",
+  "version": "1.0.0",
+  "description": "An exercise to migrate a legacy AngularJS app to React",
+  "main": "dist/bundle.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LoneRifle/Memory-Game.git"
+  },
+  "keywords": [
+    "angularjs",
+    "react"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LoneRifle/Memory-Game/issues"
+  },
+  "homepage": "https://github.com/LoneRifle/Memory-Game#readme",
+  "devDependencies": {
+    "webpack": "^3.8.1"
+  },
+  "dependencies": {
+    "angular": "^1.4.14"
+  }
+}

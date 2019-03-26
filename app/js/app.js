@@ -1,6 +1,7 @@
 'use strict';
 /* App Controllers */
 
+const Game = require('./game')
 
 var memoryGameApp = angular.module('memoryGameApp', []);
 

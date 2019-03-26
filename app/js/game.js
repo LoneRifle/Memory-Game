@@ -91,3 +91,4 @@ function removeRandomTile(tileDeck) {
   return tileDeck.splice(i, 1)[0];
 }
 
+module.exports = Game
