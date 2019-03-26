@@ -43,7 +43,6 @@ div {
   display: block;
   height: 100%;
   width: 100%;
-  position: absolute;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
@@ -55,6 +54,7 @@ div {
 
 .card .back {
   background: blue;
+  margin-top: -200px;
   -webkit-transform: rotateY( 180deg );
   -moz-transform: rotateY( 180deg );
   -ms-transform: rotateY( 180deg );
