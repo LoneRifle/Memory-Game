@@ -8,5 +8,6 @@ module.exports = [
       path: path.resolve(__dirname, './app/dist'),
       filename: 'bundle.js',
     },
+    devtool: 'source-map',
   }
 ]

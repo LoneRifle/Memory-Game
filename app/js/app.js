@@ -15,6 +15,12 @@ memoryGameApp.factory('game', function() {
 });
 
 
-memoryGameApp.controller('GameCtrl', function GameCtrl($scope, game) {
-  $scope.game = game;
-});
+memoryGameApp.controller('GameCtrl', 
+  [
+    '$scope',
+    'game',
+    function GameCtrl($scope, game) {
+      $scope.game = game;
+    }
+  ]
+);
